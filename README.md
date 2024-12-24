@@ -1,75 +1,39 @@
-# Nuxt Minimal Starter
+# Portfolio
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+<div align="center">
 
-## Setup
+[![Nuxt.js](https://img.shields.io/badge/Nuxt.js-00DC82?style=for-the-badge&logo=nuxt.js&logoColor=white)](https://nuxt.com/)
+[![Vue.js](https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white)](https://vuejs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Nuxt UI](https://img.shields.io/badge/Nuxt_UI-00DC82?style=for-the-badge&logo=nuxt.js&logoColor=white)](https://ui.nuxt.com/)
 
-Make sure to install dependencies:
+Mon portfolio personnel développé avec Nuxt 3 et Vue.js 💚
+
+</div>
+
+## ✨ Fonctionnalités
+
+- ⚡️ Nuxt 3 + Vue 3
+- 🎨 Nuxt UI Components
+- 🎯 Responsive Design
+- 🌗 Dark/Light Mode
+
+## 🚀 Installation
 
 ```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
+# Installation des dépendances
 yarn install
 
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
+# Lancement du serveur de développement
 yarn dev
 
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
+# Build production
 yarn build
-
-# bun
-bun run build
 ```
 
-Locally preview production build:
+## 👨‍💻 Auteur
 
-```bash
-# npm
-npm run preview
+**$heldon**
 
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+[![Discord](https://img.shields.io/badge/-Discord-553E91?style=for-the-badge&logo=discord&logoColor=white)](https://discord.sheldon-dev.fr)
+[![Portfolio](https://img.shields.io/badge/-Portfolio-3E6AB2?style=for-the-badge&logo=firefox&logoColor=white)](https://sheldon-dev.fr)
