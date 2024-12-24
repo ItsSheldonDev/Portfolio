@@ -7,7 +7,7 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Nuxt UI](https://img.shields.io/badge/Nuxt_UI-00DC82?style=for-the-badge&logo=nuxt.js&logoColor=white)](https://ui.nuxt.com/)
 
-Mon portfolio personnel avec Nuxt 3 et Vue.js 💚
+Mon portfolio développé avec Nuxt 3 et Vue.js 💚
 
 </div>
 
