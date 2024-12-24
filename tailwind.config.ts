@@ -10,7 +10,8 @@ export default <Partial<Config>>{
       },
       animation: {
         'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'heartbeat': 'heartbeat 1.5s ease-in-out infinite'
+        'heartbeat': 'heartbeat 1.5s ease-in-out infinite',
+        'bounce': 'bounce 1s infinite',
       },
       keyframes: {
         pulse: {
@@ -20,7 +21,11 @@ export default <Partial<Config>>{
         heartbeat: {
           '0%, 100%': { transform: 'scale(1)' },
           '50%': { transform: 'scale(1.15)' },
-        }
+        },
+        bounce: {
+          '0%, 100%': { transform: 'translateY(0)', opacity: '0.5', },
+          '50%': { transform: 'translateY(-25%)', opacity: '1', },
+        },
       }
     }
   }
