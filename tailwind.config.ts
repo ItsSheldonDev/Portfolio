@@ -4,6 +4,11 @@ export default <Partial<Config>>{
   darkMode: 'class',
   theme: {
     extend: {
+      colors: {
+        gray: {
+          950: '#0B0F1A'
+        }
+      },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
         display: ['Space Grotesk', 'sans-serif']

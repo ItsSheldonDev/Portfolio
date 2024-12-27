@@ -1,8 +1,8 @@
 <template>
-  <NuxtLayout>
+  <div>
     <LoaderLogo v-if="isLoading" />
-    <NuxtPage v-else />
-  </NuxtLayout>
+    <NuxtLayout name="default" v-else />
+  </div>
 </template>
 
 <script setup>

@@ -83,7 +83,7 @@
   const navigation = [
     { name: 'Accueil', path: '/' },
     { name: 'Projets', path: '/projects' },
-    { name: 'Contact', path: '/contact' }
+    { name: 'Contact', path: 'https://cloudyshell.fr/contact' }
   ]
   
   const colorMode = useColorMode()

@@ -1,10 +1,10 @@
 <template>
-  <div :class="{ 'dark': colorMode.value === 'dark' }">
-    <div class="min-h-screen bg-white dark:bg-gray-950 text-gray-900 dark:text-white transition-colors duration-300">
+  <div :class="colorMode.value">
+    <div class="min-h-screen transition-all duration-300">
       <BackgroundGradient />
       <TheHeader />
       <main class="pt-20">
-        <slot />
+        <NuxtPage />
       </main>
       <TheFooter />
     </div>
