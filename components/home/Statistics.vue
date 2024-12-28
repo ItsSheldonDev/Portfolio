@@ -10,8 +10,8 @@
       >
         <!-- Effet de fumée pour chaque carte -->
         <div class="absolute inset-0 -z-10">
-          <div class="absolute inset-[-3rem] bg-black/60 blur-3xl rounded-[40px] animate-smoke"></div>
-          <div class="absolute inset-[-2rem] bg-gradient-to-t from-violet-900/40 to-transparent blur-2xl rounded-[30px] animate-glow"></div>
+          <div class="absolute inset-[-3rem] dark:inset-[-1.5rem] blur-3xl rounded-[40px] animate-smoke dark:bg-violet-900/20 bg-black/60"></div>
+          <div class="absolute inset-[-2rem] dark:inset-[1.3rem] blur-2xl rounded-[30px] animate-glow dark:bg-violet-600/15 bg-gradient-to-t from-violet-900/40 to-transparent"></div>
         </div>
  
         <div class="text-4xl font-bold text-white mb-2 group-hover:text-violet-400 transition-colors">

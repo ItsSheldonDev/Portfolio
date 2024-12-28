@@ -19,7 +19,7 @@
     "@vueuse/core": "^12.2.0",
     "framer-motion": "^11.15.0",
     "gsap": "^3.12.5",
-    "nuxt": "^3.14.1592",
+    "nuxt": "^3.15.0",
     "vue": "latest",
     "vue-lanyard": "^0.1.2",
     "vue-router": "latest"

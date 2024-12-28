@@ -3,13 +3,20 @@
     <div class="text-center mb-8">
       <SectionTitle title="DISCORD" subtitle="Mon Status" />
     </div>
-
-    <div class="p-8 rounded-xl backdrop-blur-sm border transition-colors duration-300
-      dark:bg-white/5 dark:border-white/10
+ 
+    <div class="group relative p-8 rounded-xl backdrop-blur-sm border transition-all duration-500 hover:border-violet-500/50
+      dark:bg-[#111]/50 dark:border-white/10
       bg-[#171420] border-gray-700">
+      
+      <!-- Effet de fumée -->
+      <div class="absolute inset-0 -z-10">
+        <div class="absolute inset-[-3rem] dark:inset-[-1.5rem] blur-3xl rounded-[40px] animate-smoke dark:bg-violet-900/20 bg-black/60"></div>
+        <div class="absolute inset-[-2rem] dark:inset-[1.3rem] blur-3xl rounded-[30px] animate-glow dark:bg-violet-600/15 bg-gradient-to-t from-violet-900/40 to-transparent"></div>
+      </div>
+ 
+      <!-- Contenu -->
       <template v-if="data">
         <div class="flex items-center gap-6">
-          <!-- Avatar avec indicateur de statut -->
           <div class="relative">
             <img 
               :src="getAvatarUrl(data.discord_user)"
@@ -24,43 +31,40 @@
               ]"
             />
           </div>
-
+ 
           <div class="flex-1">
-            <!-- Username et badges -->
             <div class="flex items-center gap-2 mb-2">
-              <span class="font-medium text-white">
+              <span class="font-medium text-white group-hover:text-violet-400 transition-colors">
                 {{ data.discord_user.username }}
               </span>
               <span class="text-sm text-gray-400">
                 ({{ getStatusText(data.discord_status) }})
               </span>
             </div>
-
-            <!-- Activités -->
+ 
             <div v-if="data.activities?.length" class="space-y-2">
               <div v-for="activity in data.activities" :key="activity.name"
-                class="flex items-center gap-2 text-sm text-gray-300"
+                class="flex items-center gap-2 text-sm text-gray-300 group-hover:text-gray-200 transition-colors"
               >
                 <Icon :name="getActivityIcon(activity.type)" class="w-4 h-4" />
                 <span>{{ activity.name }}</span>
-                <span v-if="activity.details" class="text-xs text-gray-400">
+                <span v-if="activity.details" class="text-xs text-gray-400 group-hover:text-gray-300 transition-colors">
                   • {{ activity.details }}
                 </span>
-                <span v-if="activity.state" class="text-xs text-gray-400">
+                <span v-if="activity.state" class="text-xs text-gray-400 group-hover:text-gray-300 transition-colors">
                   • {{ activity.state }}
                 </span>
               </div>
             </div>
             
-            <!-- État par défaut si pas d'activité -->
-            <div v-else class="text-sm text-gray-400">
+            <div v-else class="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">
               Aucune activité en cours
             </div>
           </div>
         </div>
       </template>
-
-      <!-- État de chargement -->
+ 
+      <!-- Loading state -->
       <template v-else>
         <div class="flex items-center gap-6">
           <div class="w-16 h-16 rounded-full bg-white/10 animate-pulse" />
@@ -72,7 +76,7 @@
       </template>
     </div>
   </div>
-</template>
+ </template>
 
 <script setup>
 import { useLanyard } from 'vue-lanyard'
@@ -113,3 +117,35 @@ function getActivityIcon(type) {
   return icons[type] || 'heroicons:question-mark-circle'
 }
 </script>
+
+<style scoped>
+@keyframes smoke {
+ 0%, 100% {
+   transform: translateY(0) scale(1);
+   opacity: 0.6;
+ }
+ 50% {
+   transform: translateY(-15px) scale(1.15);
+   opacity: 0.4;
+ }
+}
+
+@keyframes glow {
+ 0%, 100% {
+   opacity: 0.4;
+   transform: scale(1);
+ }
+ 50% {
+   opacity: 0.6;
+   transform: scale(1.1);
+ }
+}
+
+.animate-smoke {
+ animation: smoke 10s ease-in-out infinite;
+}
+
+.animate-glow {
+ animation: glow 5s ease-in-out infinite;
+}
+</style>
