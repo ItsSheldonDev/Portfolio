@@ -4,20 +4,18 @@
       <SectionTitle title="APERÇU" subtitle="Mes Réalisations" />
     </div>
  
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+    <!-- Version Dark -->
+     <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto dark:flex dark:flex-wrap dark:justify-center dark:gap-8">
       <div v-for="tech in topTechnologies" :key="tech.name"
         class="group relative p-8 rounded-xl backdrop-blur-sm border transition-all duration-500
-          dark:bg-[#111]/50 dark:border-white/10
-          bg-[#171420] border-gray-700
+          bg-[#111]/50 border-white/10
           hover:border-violet-500/50"
       >
-        <!-- Effet de fumée -->
         <div class="absolute inset-0 -z-10">
-          <div class="absolute inset-[-3rem] dark:inset-[-1.5rem] blur-3xl rounded-[40px] animate-smoke dark:bg-violet-900/20 bg-black/60"></div>
-          <div class="absolute inset-[-2rem] dark:inset-[1.3rem] blur-2xl rounded-[30px] animate-glow dark:bg-violet-600/15 bg-gradient-to-t from-violet-900/40 to-transparent"></div>
+          <div class="absolute inset-[-1.5rem] blur-3xl rounded-[40px] animate-smoke bg-violet-900/20"></div>
+          <div class="absolute inset-[1.3rem] blur-2xl rounded-[30px] animate-glow bg-violet-600/15"></div>
         </div>
  
-        <!-- Contenu -->
         <a :href="tech.url" target="_blank" class="block">
           <div class="flex flex-col items-center gap-4">
             <Icon 
@@ -25,6 +23,31 @@
               class="w-12 h-12 text-gray-400 group-hover:text-violet-400 transition-colors duration-500" 
             />
             <span class="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">
+              {{ tech.count }} projets
+            </span>
+          </div>
+        </a>
+      </div>
+    </div>
+ 
+    <!-- Version Light -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto dark:hidden">
+      <div v-for="tech in topTechnologies" :key="tech.name"
+        class="group relative p-8 rounded-xl backdrop-blur-sm transition-all duration-500
+          bg-gradient-to-r from-[#3B82F6] to-[#7C3AED]"
+      >
+        <div class="absolute inset-0 -z-10">
+          <div class="absolute inset-[-1rem] blur-2xl rounded-[40px] animate-smoke bg-gradient-to-r from-[#3B82F6]/60 to-[#7C3AED]/60"></div>
+          <div class="absolute inset-[-2rem] blur-2xl rounded-[30px] animate-glow bg-gradient-to-r from-[#3B82F6]/40 to-[#7C3AED]/40"></div>
+        </div>
+ 
+        <a :href="tech.url" target="_blank" class="block">
+          <div class="flex flex-col items-center gap-4">
+            <Icon 
+              :name="tech.icon" 
+              class="w-12 h-12 text-white group-hover:text-white/90 transition-colors duration-500" 
+            />
+            <span class="text-sm text-white/70 group-hover:text-white/80 transition-colors">
               {{ tech.count }} projets
             </span>
           </div>

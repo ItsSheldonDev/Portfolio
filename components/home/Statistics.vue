@@ -2,16 +2,17 @@
   <div class="mb-32">
     <SectionTitle title="STATISTIQUES" subtitle="Mes Chiffres" />
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+      <!-- Version Dark -->
       <div v-for="(value, key) in displayStats" :key="key" 
         class="group relative p-8 rounded-xl backdrop-blur-sm border transition-all duration-500
-          dark:bg-[#111]/50 dark:border-white/10
-          bg-[#171420] border-gray-700 
-          hover:border-violet-500/50 text-center"
+          bg-[#111]/50 border-white/10
+          hover:border-violet-500/50 text-center
+          dark:block hidden"
       >
         <!-- Effet de fumée pour chaque carte -->
         <div class="absolute inset-0 -z-10">
-          <div class="absolute inset-[-3rem] dark:inset-[-1.5rem] blur-3xl rounded-[40px] animate-smoke dark:bg-violet-900/20 bg-black/60"></div>
-          <div class="absolute inset-[-2rem] dark:inset-[1.3rem] blur-2xl rounded-[30px] animate-glow dark:bg-violet-600/15 bg-gradient-to-t from-violet-900/40 to-transparent"></div>
+          <div class="absolute inset-[-1.5rem] blur-3xl rounded-[40px] animate-smoke bg-violet-900/20"></div>
+          <div class="absolute inset-[1.3rem] blur-2xl rounded-[30px] animate-glow bg-violet-600/15"></div>
         </div>
  
         <div class="text-4xl font-bold text-white mb-2 group-hover:text-violet-400 transition-colors">
@@ -26,6 +27,32 @@
           </template>
         </div>
         <div class="text-gray-400 group-hover:text-gray-300 transition-colors">{{ value.label }}</div>
+      </div>
+ 
+      <!-- Version Light -->
+      <div v-for="(value, key) in displayStats" :key="key" 
+        class="group relative p-8 rounded-xl backdrop-blur-sm transition-all duration-500
+          bg-gradient-to-r from-[#3B82F6] to-[#7C3AED] text-center
+          dark:hidden"
+      >
+        <!-- Effet de fumée pour chaque carte -->
+        <div class="absolute inset-0 -z-10">
+          <div class="absolute inset-[-1rem] blur-2xl rounded-[40px] animate-smoke bg-gradient-to-r from-[#3B82F6]/60 to-[#7C3AED]/60"></div>
+          <div class="absolute inset-[-2rem] blur-2xl rounded-[30px] animate-glow bg-gradient-to-r from-[#3B82F6]/40 to-[#7C3AED]/40"></div>
+        </div>
+ 
+        <div class="text-4xl font-bold text-white mb-2 group-hover:text-white/90 transition-colors">
+          <template v-if="key === 'language'">
+            <Icon :name="getLanguageIcon(value.count)" class="w-12 h-12" />
+          </template>
+          <template v-else>
+            <div class="flex items-center justify-center gap-2">
+              <Icon :name="statIcons[key]" class="w-8 h-8" />
+              {{ value.count }}
+            </div>
+          </template>
+        </div>
+        <div class="text-white/70 group-hover:text-white/80 transition-colors">{{ value.label }}</div>
       </div>
     </div>
   </div>
