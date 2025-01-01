@@ -3,22 +3,14 @@
     <div class="text-center mb-16">
       <SectionTitle title="TECHNOLOGIES" subtitle="Stack Technique" />
     </div>
-
+ 
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
-      <!-- Version Dark -->
+      <!-- Dark Mode -->
       <div v-for="tech in technologies" :key="tech.name" 
         class="group relative p-8 rounded-xl backdrop-blur-sm border transition-all duration-500
-          bg-[#111]/50 border-white/10
-          hover:border-violet-500/50
+          bg-[#111]/50 border-white/10 hover:border-violet-500/50 transform hover:scale-[1.02]
           dark:block hidden"
       >
-        <!-- Effet de fumée pour chaque carte -->
-        <div class="absolute inset-0 -z-10">
-          <div class="absolute inset-[-1.5rem] blur-3xl rounded-[40px] animate-smoke bg-violet-900/20"></div>
-          <div class="absolute inset-[1.3rem] blur-2xl rounded-[30px] animate-glow bg-violet-600/15"></div>
-        </div>
-
-        <!-- Contenu -->
         <div class="flex justify-center items-center h-16 mb-4">
           <Icon 
             :name="tech.icon" 
@@ -32,20 +24,13 @@
           {{ tech.description }}
         </p>
       </div>
-
-      <!-- Version Light -->
+ 
+      <!-- Light Mode -->
       <div v-for="tech in technologies" :key="tech.name" 
         class="group relative p-8 rounded-xl backdrop-blur-sm transition-all duration-500
-          bg-gradient-to-r from-[#3B82F6] to-[#7C3AED]
-          dark:hidden"
+          bg-gradient-to-r from-blue-500 to-violet-600 hover:from-blue-600 hover:to-violet-700
+          dark:hidden transform hover:scale-[1.02]"
       >
-        <!-- Effet de fumée pour chaque carte -->
-        <div class="absolute inset-0 -z-10">
-          <div class="absolute inset-[-1rem] blur-2xl rounded-[40px] animate-smoke bg-gradient-to-r from-[#3B82F6]/60 to-[#7C3AED]/60"></div>
-          <div class="absolute inset-[-2rem] blur-2xl rounded-[30px] animate-glow bg-gradient-to-r from-[#3B82F6]/40 to-[#7C3AED]/40"></div>
-        </div>
-
-        <!-- Contenu -->
         <div class="flex justify-center items-center h-16 mb-4">
           <Icon 
             :name="tech.icon" 
@@ -61,7 +46,7 @@
       </div>
     </div>
   </div>
-</template>
+ </template>
  
  <script setup>
  const technologies = [
@@ -87,35 +72,3 @@
   }
  ]
  </script>
- 
- <style scoped>
- @keyframes smoke {
-  0%, 100% {
-    transform: translateY(0) scale(1);
-    opacity: 0.6;
-  }
-  50% {
-    transform: translateY(-15px) scale(1.15);
-    opacity: 0.4;
-  }
- }
- 
- @keyframes glow {
-  0%, 100% {
-    opacity: 0.4;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.6;
-    transform: scale(1.1);
-  }
- }
- 
- .animate-smoke {
-  animation: smoke 10s ease-in-out infinite;
- }
- 
- .animate-glow {
-  animation: glow 5s ease-in-out infinite;
- }
- </style>

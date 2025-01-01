@@ -2,19 +2,12 @@
   <div class="mb-32">
     <SectionTitle title="STATISTIQUES" subtitle="Mes Chiffres" />
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
-      <!-- Version Dark -->
+      <!-- Dark Mode -->
       <div v-for="(value, key) in displayStats" :key="key" 
         class="group relative p-8 rounded-xl backdrop-blur-sm border transition-all duration-500
-          bg-[#111]/50 border-white/10
-          hover:border-violet-500/50 text-center
+          bg-[#111]/50 border-white/10 hover:border-violet-500/50 text-center transform hover:scale-[1.02]
           dark:block hidden"
       >
-        <!-- Effet de fumée pour chaque carte -->
-        <div class="absolute inset-0 -z-10">
-          <div class="absolute inset-[-1.5rem] blur-3xl rounded-[40px] animate-smoke bg-violet-900/20"></div>
-          <div class="absolute inset-[1.3rem] blur-2xl rounded-[30px] animate-glow bg-violet-600/15"></div>
-        </div>
- 
         <div class="text-4xl font-bold text-white mb-2 group-hover:text-violet-400 transition-colors">
           <template v-if="key === 'language'">
             <Icon :name="getLanguageIcon(value.count)" class="w-12 h-12" />
@@ -29,18 +22,12 @@
         <div class="text-gray-400 group-hover:text-gray-300 transition-colors">{{ value.label }}</div>
       </div>
  
-      <!-- Version Light -->
+      <!-- Light Mode -->
       <div v-for="(value, key) in displayStats" :key="key" 
         class="group relative p-8 rounded-xl backdrop-blur-sm transition-all duration-500
-          bg-gradient-to-r from-[#3B82F6] to-[#7C3AED] text-center
-          dark:hidden"
+          bg-gradient-to-r from-blue-500 to-violet-600 hover:from-blue-600 hover:to-violet-700 text-center
+          dark:hidden transform hover:scale-[1.02]"
       >
-        <!-- Effet de fumée pour chaque carte -->
-        <div class="absolute inset-0 -z-10">
-          <div class="absolute inset-[-1rem] blur-2xl rounded-[40px] animate-smoke bg-gradient-to-r from-[#3B82F6]/60 to-[#7C3AED]/60"></div>
-          <div class="absolute inset-[-2rem] blur-2xl rounded-[30px] animate-glow bg-gradient-to-r from-[#3B82F6]/40 to-[#7C3AED]/40"></div>
-        </div>
- 
         <div class="text-4xl font-bold text-white mb-2 group-hover:text-white/90 transition-colors">
           <template v-if="key === 'language'">
             <Icon :name="getLanguageIcon(value.count)" class="w-12 h-12" />
@@ -65,58 +52,30 @@
  
  const statIcons = {
   projects: 'heroicons:folder',
-  stars: 'heroicons:star',
+  stars: 'heroicons:star', 
   forks: 'heroicons:arrow-path'
  }
  
- const displayStats = computed(() => ({
-  projects: {
-    count: stats.value.totalProjects,
-    label: 'Projets'
-  },
-  stars: {
-    count: stats.value.totalStars,
-    label: 'Stars'
-  },
-  forks: {
-    count: stats.value.totalForks,
-    label: 'Forks'
-  },
-  language: {
-    count: stats.value.mainLanguage,
-    label: 'Language Principal'
+ const displayStats = computed(() => {
+  const topLang = stats.value.topLanguages[0]
+  
+  return {
+    projects: {
+      count: stats.value.totalProjects,
+      label: 'Projets'
+    },
+    stars: {
+      count: stats.value.totalStars,
+      label: 'Stars'
+    },
+    forks: {
+      count: stats.value.totalForks,
+      label: 'Forks'
+    },
+    language: {
+      count: topLang?.name || '',
+      label: 'Language Principal'
+    }
   }
- }))
+ })
  </script>
- 
- <style scoped>
- @keyframes smoke {
-  0%, 100% {
-    transform: translateY(0) scale(1);
-    opacity: 0.6;
-  }
-  50% {
-    transform: translateY(-15px) scale(1.15);
-    opacity: 0.4;
-  }
- }
- 
- @keyframes glow {
-  0%, 100% {
-    opacity: 0.4;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.6;
-    transform: scale(1.1);
-  }
- }
- 
- .animate-smoke {
-  animation: smoke 10s ease-in-out infinite;
- }
- 
- .animate-glow {
-  animation: glow 5s ease-in-out infinite;
- }
- </style>

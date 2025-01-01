@@ -16,6 +16,7 @@ export interface IconMapping {
     'Ruby': 'logos:ruby',
     'Go': 'logos:go',
     'Shell': 'logos:bash',
+    'Hack': 'logos:hacklang',
     'default': 'heroicons:code-bracket'
   }
    
