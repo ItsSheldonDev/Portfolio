@@ -13,3 +13,28 @@ body {
 .glass {
   @apply backdrop-blur-lg bg-white/10 border border-white/20;
 }
+
+html.has-scroll-smooth {
+  @apply overflow-hidden;
+}
+
+[data-scroll-container] {
+  @apply min-h-screen;
+}
+
+.c-scrollbar_thumb {
+  @apply !rounded-full;
+}
+
+/* Animation de fondu au chargement */
+[data-scroll] {
+  transition: opacity 1s ease;
+}
+
+[data-scroll="in"] {
+  opacity: 1;
+}
+
+[data-scroll="out"] {
+  opacity: 0;
+}

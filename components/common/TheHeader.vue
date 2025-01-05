@@ -2,7 +2,7 @@
     <header class="fixed top-0 left-0 right-0 z-50">
       <nav class="mx-auto px-6 py-5 flex items-center justify-between backdrop-blur-md bg-white/50 dark:bg-gray-950/50 border-b border-gray-200/50 dark:border-gray-800/50">
         <NuxtLink to="/" class="relative group">
-          <Logo :width="80" :height="38" />
+          <CommonLogo :width="80" :height="38" />
           <div class="absolute -inset-2 bg-gradient-to-r from-violet-500/0 via-violet-500/5 to-indigo-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl rounded-full"></div>
         </NuxtLink>
         

@@ -1,16 +1,16 @@
 <template>
   <div :class="colorMode.value">
-    <div class="min-h-screen transition-all duration-300">
-      <BackgroundGradient />
-      <TheHeader />
+    <BackgroundGradient />
+    <CommonTheHeader />
+    <UiSmoothScroll>
       <main class="pt-20">
-        <NuxtPage />
+        <slot />
       </main>
-      <TheFooter />
-    </div>
+      <CommonTheFooter />
+    </UiSmoothScroll>
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 const colorMode = useColorMode()
 </script>

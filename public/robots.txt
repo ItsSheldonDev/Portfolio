@@ -1,1 +1,10 @@
+User-agent: *
+Allow: /
 
+# Sitemap
+Sitemap: https://sheldon-dev.fr/sitemap.xml
+
+# Interdire l'accès aux dossiers privés
+Disallow: /admin/
+Disallow: /.nuxt/
+Disallow: /private/

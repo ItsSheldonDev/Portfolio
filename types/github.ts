@@ -1,37 +1,25 @@
-export interface GithubRepo { 
- id: number;
- name: string; 
- description: string;
- html_url: string;
- language: string | null;
- stargazers_count: number;
- forks_count: number;
- topics: string[];
- updated_at: string;
- private: boolean;
- size: number;
-}
+// types/github.ts
+import type { Octokit } from '@octokit/rest'
+import type { components } from '@octokit/openapi-types'
+
+type Repository = components["schemas"]["repository"]
 
 export interface LanguageStats {
- name: string;
- count: number; 
- percentage: number;
+  name: string;
+  count: number;
+  percentage: number;
 }
 
 export interface GithubStats {
- totalProjects: number;
- totalStars: number;
- totalForks: number; 
- totalSize: number;
- mainLanguage: string;
- topLanguages: LanguageStats[];
- topTopics: {
-   name: string;
-   count: number;
- }[];
+  totalProjects: number;
+  totalStars: number;
+  totalForks: number;
+  totalSize: number;
+  mainLanguage: string;
+  topLanguages: LanguageStats[];
+  topTopics: {name: string; count: number}[];
 }
 
-export interface CachedGithubData {
- repos: GithubRepo[];
- stats: GithubStats;
+export interface ExtendedRepo extends Repository {
+  languages: Record<string, number>;
 }

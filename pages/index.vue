@@ -1,34 +1,56 @@
 <template>
   <div class="container mx-auto px-4 py-16 relative">
-    <HeroSection />
-    <div class="flex items-center justify-center gap-4 mb-32">
-      <DecorativeLineDivider direction="left" />
-      <DecorativeStarDivider />
-      <DecorativeLineDivider />
-    </div>
+    <ScrollReveal>
+      <HeroSection />
+    </ScrollReveal>
  
-    <TechStack />
-    <div class="flex items-center justify-center gap-4 my-32">
-      <DecorativeLineDivider direction="left" />
-      <DecorativeStarDivider />
-      <DecorativeLineDivider />
-    </div>
+    <ScrollReveal :delay="200">
+      <div class="flex items-center justify-center gap-4 mb-32">
+        <DecorativeLineDivider direction="left" />
+        <DecorativeStarDivider />
+        <DecorativeLineDivider />
+      </div>
+    </ScrollReveal>
  
-    <Statistics />
-    <div class="flex items-center justify-center gap-4 my-32">
-      <DecorativeLineDivider direction="left" />
-      <DecorativeStarDivider />
-      <DecorativeLineDivider />
-    </div>
+    <ScrollReveal direction="up" :delay="300">
+      <TechStack />
+    </ScrollReveal>
  
-    <DiscordStatus />
-    <div class="flex items-center justify-center gap-4 my-32">
-      <DecorativeLineDivider direction="left" />
-      <DecorativeStarDivider />
-      <DecorativeLineDivider />
-    </div>
+    <ScrollReveal :delay="200">
+      <div class="flex items-center justify-center gap-4 my-32">
+        <DecorativeLineDivider direction="left" />
+        <DecorativeStarDivider />
+        <DecorativeLineDivider />
+      </div>
+    </ScrollReveal>
  
-    <ProjectsPreview />
+    <ScrollReveal direction="up" :delay="300">
+      <Statistics />
+    </ScrollReveal>
+ 
+    <ScrollReveal :delay="200">
+      <div class="flex items-center justify-center gap-4 my-32">
+        <DecorativeLineDivider direction="left" />
+        <DecorativeStarDivider />
+        <DecorativeLineDivider />
+      </div>
+    </ScrollReveal>
+ 
+    <ScrollReveal direction="scale" :delay="300">
+      <DiscordStatus />
+    </ScrollReveal>
+ 
+    <ScrollReveal :delay="200">
+      <div class="flex items-center justify-center gap-4 my-32">
+        <DecorativeLineDivider direction="left" />
+        <DecorativeStarDivider />
+        <DecorativeLineDivider />
+      </div>
+    </ScrollReveal>
+ 
+    <ScrollReveal direction="up" :delay="300">
+      <ProjectsPreview />
+    </ScrollReveal>
   </div>
  </template>
  
@@ -40,4 +62,5 @@
  import ProjectsPreview from '~/components/home/ProjectsPreview.vue'
  import DecorativeLineDivider from '~/components/decorative/LineDivider.vue'
  import DecorativeStarDivider from '~/components/decorative/StarDivider.vue'
+ import ScrollReveal from '~/components/ui/ScrollReveal.vue'
  </script>
