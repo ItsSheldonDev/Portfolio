@@ -26,7 +26,7 @@
               class="group relative text-white hover:text-white transition-all duration-300"
             >
               <div class="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 rounded-lg transition-opacity"></div>
-              <Icon
+              <UIcon
                 :name="social.icon"
                 class="w-5 h-5 transition-all duration-300 group-hover:scale-110 text-white relative z-10"
               />
@@ -39,7 +39,7 @@
         <div class="grid grid-cols-2 gap-8">
           <div>
             <h3 class="font-display font-medium text-white mb-4 flex items-center gap-2">
-              <Icon name="heroicons:map" class="w-4 h-4" />
+              <UIcon name="i-heroicons-map" class="w-4 h-4" />
               Navigation
             </h3>
             <ul class="space-y-2">
@@ -48,7 +48,7 @@
                   :to="link.path"
                   class="text-gray-400 hover:text-white transition-colors text-sm flex items-center gap-2 group relative"
                 >
-                  <Icon :name="link.icon" class="w-4 h-4 transition-transform duration-300 group-hover:scale-110" />
+                  <UIcon :name="link.icon" class="w-4 h-4 transition-transform duration-300 group-hover:scale-110" />
                   <span class="relative">
                     {{ link.name }}
                     <span class="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-violet-500/0 via-violet-500/40 to-violet-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
@@ -60,7 +60,7 @@
  
           <div>
             <h3 class="font-display font-medium text-white mb-4 flex items-center gap-2">
-              <Icon name="heroicons:chat-bubble-left-right" class="w-4 h-4" />
+              <UIcon name="i-heroicons-chat-bubble-left-right" class="w-4 h-4" />
               Contact
             </h3>
             <ul class="space-y-2">
@@ -72,7 +72,7 @@
                   class="text-gray-400 hover:text-white transition-all duration-300 text-sm flex items-center gap-2 group relative w-full justify-start"
                 >
                   <div class="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 rounded-lg transition-opacity"></div>
-                  <Icon name="heroicons:envelope" class="w-4 h-4 transition-transform duration-300 group-hover:scale-110" />
+                  <UIcon name="i-heroicons-envelope" class="w-4 h-4 transition-transform duration-300 group-hover:scale-110" />
                   <span class="relative">
                     marius@cloudyshell.fr
                     <span class="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-violet-500/0 via-violet-500/40 to-violet-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
@@ -89,7 +89,7 @@
                   class="text-gray-400 hover:text-white transition-all duration-300 text-sm flex items-center gap-2 group relative w-full justify-start"
                 >
                   <div class="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 rounded-lg transition-opacity"></div>
-                  <Icon name="ri:discord-fill" class="w-4 h-4 transition-transform duration-300 group-hover:scale-110" />
+                  <UIcon name="i-simple-discord" class="w-4 h-4 transition-transform duration-300 group-hover:scale-110" />
                   <span class="relative">
                     Discord
                     <span class="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-violet-500/0 via-violet-500/40 to-violet-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
@@ -114,22 +114,22 @@
  
 <script setup lang="ts">
 const navigation = [
-  { name: 'Accueil', path: '/', icon: 'heroicons:home' },
-  { name: 'Projets', path: '/projects', icon: 'heroicons:squares-2x2' },
-  { name: 'Contact', path: 'https://cloudyshell.fr/contact', icon: 'heroicons:envelope' },
-  { name: 'Status', path: 'https://status.sheldon-dev.fr', icon: 'heroicons:chart-bar' }
+  { name: 'Accueil', path: '/', icon: 'i-heroicons-home' },
+  { name: 'Projets', path: '/projects', icon: 'i-heroicons-squares-2x2' },
+  { name: 'Contact', path: 'https://cloudyshell.fr/contact', icon: 'i-heroicons-envelope' },
+  { name: 'Status', path: 'https://status.sheldon-dev.fr', icon: 'i-heroicons-chart-bar' }
 ]
  
 const socials = [
   {
     name: 'GitHub',
     url: 'https://github.com/ItsSheldonDev',
-    icon: 'ri:github-fill'
+    icon: 'i-simple-github'
   },
   {
     name: 'Discord',
     url: 'https://discord.com/users/999325599740997705',
-    icon: 'ri:discord-fill'
+    icon: 'i-simple-discord'
   }
 ]
 </script>

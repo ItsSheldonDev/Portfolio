@@ -63,4 +63,4 @@
  import DecorativeLineDivider from '~/components/decorative/LineDivider.vue'
  import DecorativeStarDivider from '~/components/decorative/StarDivider.vue'
  import ScrollReveal from '~/components/ui/ScrollReveal.vue'
- </script>
+ </script>  

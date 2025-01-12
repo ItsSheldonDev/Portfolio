@@ -63,25 +63,30 @@ export default defineNuxtConfig({
     fallback: 'dark'
   },
 
-  icon: {
-    mode: 'static'
-  },
-  
   nitro: {
     prerender: {
       failOnError: false,
+      //@ts-ignore
+      logLevel: 1,
       crawlLinks: true,
       routes: [
         '/',
         '/projects'
-      ]
+      ],
     },
-    compressPublicAssets: true
+    port: 3852,
+    compressPublicAssets: true,
+    debug: false,
   },
 
+  experimental: {
+    payloadExtraction: false,
+    renderJsonPayloads: false
+  },
+  
   build: {
-    transpile: ['vue-lanyard', '@iconify/vue']
+    transpile: ['vue-lanyard']
   },
 
-  compatibilityDate: '2024-12-23'
+  compatibilityDate: '2024-01-23'
 })

@@ -7,7 +7,7 @@
   >
     <!-- État d'erreur -->
     <div v-if="error" class="text-center">
-      <Icon name="heroicons:exclamation-circle" class="w-8 h-8 mx-auto mb-2" />
+      <UIcon name="i-heroicons-exclamation-circle" class="w-8 h-8 mx-auto mb-2" />
       <p :class="colorMode.value === 'dark' ? 'text-gray-400' : 'text-white/70'">
         Impossible de charger ce projet
       </p>
@@ -39,8 +39,8 @@
               ? 'bg-white/5 border border-white/10 group-hover:border-violet-500/20'
               : 'bg-white/10 border border-white/20'"
           >
-            <Icon 
-              :name="private ? 'heroicons:lock-closed' : 'ph:book-fill'" 
+            <UIcon 
+              :name="private ? 'i-heroicons-lock-closed' : 'i-heroicons-book'" 
               class="w-5 h-5 group-hover:scale-110 transition-transform"
               :class="colorMode.value === 'dark' ? 'text-violet-400' : 'text-white'"
             />
@@ -59,11 +59,11 @@
               :class="colorMode.value === 'dark' ? 'text-gray-500' : 'text-white/70'"
             >
               <template v-if="language">
-                <Icon :name="getLanguageIcon(language)" class="w-4 h-4" />
+                <UIcon :name="getLanguageIcon(language)" class="w-4 h-4" />
                 {{ language }}
               </template>
               <template v-else>
-                <Icon name="heroicons:code-bracket" class="w-4 h-4" />
+                <UIcon name="i-heroicons-code-bracket" class="w-4 h-4" />
                 Non spécifié
               </template>
             </span>
@@ -77,8 +77,8 @@
           class="p-2 rounded-lg opacity-0 group-hover:opacity-100 translate-x-4 group-hover:translate-x-0 transition-all duration-300"
           :class="colorMode.value === 'dark' ? 'hover:bg-white/10' : 'hover:bg-white/20'"
         >
-          <Icon 
-            name="heroicons:arrow-top-right-on-square" 
+          <UIcon 
+            name="i-heroicons-arrow-top-right-on-square" 
             class="w-5 h-5 hover:scale-110 transition-all"
             :class="colorMode.value === 'dark' 
               ? 'text-gray-400 hover:text-white' 
@@ -120,11 +120,11 @@
               ? 'group-hover:text-violet-400'
               : 'group-hover:text-white'"
           >
-            <Icon name="heroicons:star" class="w-4 h-4" />
+            <UIcon name="i-heroicons-star" class="w-4 h-4" />
             {{ stargazers_count }}
           </div>
           <div class="flex items-center gap-2">
-            <Icon name="heroicons:clock" class="w-4 h-4" />
+            <UIcon name="i-heroicons-clock" class="w-4 h-4" />
             {{ formatRelativeDate(updated_at) }}
           </div>
         </div>

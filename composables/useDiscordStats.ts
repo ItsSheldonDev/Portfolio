@@ -41,14 +41,14 @@ export function useDiscordStats() {
 
  function getActivityIcon(type: number) {
    const icons = {
-     0: 'heroicons:play',
-     1: 'heroicons:musical-note', 
-     2: 'heroicons:headphones',
-     3: 'heroicons:video-camera',
-     4: 'heroicons:user',
-     5: 'heroicons:bolt'
+     0: 'i-heroicons-play',
+     1: 'i-heroicons-musical-note', 
+     2: 'i-heroicons-headphones',
+     3: 'i-heroicons-video-camera',
+     4: 'i-heroicons-user',
+     5: 'i-heroicons-bolt'
    }
-   return icons[type as keyof typeof icons] || 'heroicons:question-mark-circle'
+   return icons[type as keyof typeof icons] || 'i-heroicons-question-mark-circle'
  }
 
  return {

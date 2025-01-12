@@ -15,7 +15,7 @@
       >
         <ScrollReveal direction="up" :delay="index * 150">
           <div class="flex justify-center items-center h-16 mb-4">
-            <Icon 
+            <UIcon 
               :name="tech.icon" 
               class="w-12 h-12 text-gray-400 group-hover:text-violet-400 transition-colors duration-500" 
             />
@@ -37,7 +37,7 @@
       >
         <ScrollReveal direction="up" :delay="index * 150">
           <div class="flex justify-center items-center h-16 mb-4">
-            <Icon 
+            <UIcon 
               :name="tech.icon" 
               class="w-12 h-12 text-white group-hover:text-white/90 transition-colors duration-500" 
             />
@@ -52,32 +52,32 @@
       </div>
     </div>
   </div>
-</template>
-
-<script setup lang="ts">
-import SectionTitle from '~/components/common/SectionTitle.vue'
-import ScrollReveal from '~/components/ui/ScrollReveal.vue'
-
-const technologies = [
+ </template>
+ 
+ <script setup lang="ts">
+ import SectionTitle from '~/components/common/SectionTitle.vue'
+ import ScrollReveal from '~/components/ui/ScrollReveal.vue'
+ 
+ const technologies = [
   {
     name: 'Frontend',
-    icon: 'logos:vue',
+    icon: 'i-logos-vue',
     description: 'Vue 3, Nuxt, React, Next.js, TypeScript'
   },
   {
     name: 'Backend',
-    icon: 'logos:typescript-icon',
+    icon: 'i-logos-typescript-icon',
     description: 'Node.js, Express, NestJS, TypeScript, AdonisJS'
   },
   {
     name: 'Base de données',
-    icon: 'logos:mongodb-icon',
+    icon: 'i-logos-mongodb-icon',
     description: 'MongoDB, PostgreSQL, MySQL, Redis'
   },
   {
     name: 'DevOps',
-    icon: 'logos:docker-icon',
+    icon: 'i-logos-docker-icon',
     description: 'Docker, CI/CD, AWS, Linux, Git'
   }
-]
-</script>
+ ]
+ </script>

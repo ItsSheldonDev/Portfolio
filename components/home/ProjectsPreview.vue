@@ -13,7 +13,7 @@
       >
         <a :href="lang.url" target="_blank" rel="noopener noreferrer" class="block">
           <div class="flex flex-col items-center gap-4">
-            <Icon 
+            <UIcon 
               :name="getLanguageIcon(lang.name)" 
               class="w-12 h-12 text-gray-400 group-hover:text-violet-400 transition-all duration-500 transform group-hover:scale-110" 
             />
@@ -36,7 +36,7 @@
       >
         <a :href="lang.url" target="_blank" rel="noopener noreferrer" class="block">
           <div class="flex flex-col items-center gap-4">
-            <Icon 
+            <UIcon 
               :name="getLanguageIcon(lang.name)" 
               class="w-12 h-12 text-white group-hover:text-white/90 transition-all duration-500 transform group-hover:scale-110" 
             />
@@ -60,8 +60,8 @@
         >
           <span class="flex items-center gap-2">
             Explorer tous mes projets
-            <Icon 
-              name="heroicons:arrow-right" 
+            <UIcon 
+              name="i-heroicons-arrow-right" 
               class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" 
             />
           </span>
@@ -69,20 +69,20 @@
       </NuxtLink>
     </div>
   </div>
-</template>
+ </template>
  
-<script setup>
-import SectionTitle from '~/components/common/SectionTitle.vue'
-import AnimatedButton from '~/components/ui/AnimatedButton.vue'
-import { getLanguageIcon } from '~/types/icon'
-
-const { stats } = useGithubStats()
+ <script setup>
+ import SectionTitle from '~/components/common/SectionTitle.vue'
+ import AnimatedButton from '~/components/ui/AnimatedButton.vue'
+ import { getLanguageIcon } from '~/types/icon'
  
-const displayLanguages = computed(() => 
+ const { stats } = useGithubStats()
+ 
+ const displayLanguages = computed(() => 
   stats.value.topLanguages.map(lang => ({
     name: lang.name,
     percentage: lang.percentage,
     url: `https://github.com/ItsSheldonDev?tab=repositories&language=${lang.name.toLowerCase()}`
   }))
-)
-</script>
+ )
+ </script>

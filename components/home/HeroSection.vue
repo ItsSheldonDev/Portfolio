@@ -33,7 +33,7 @@
           Développeur Fullstack passionné par la création d'applications web innovantes et performantes
         </p>
       </ScrollReveal>
-
+ 
       <!-- Buttons -->
       <ScrollReveal direction="up" :delay="800">
         <div class="mt-8 md:mt-12 flex flex-row gap-4 justify-center">
@@ -45,8 +45,8 @@
             >
               <span class="flex items-center gap-2">
                 Voir mes projets
-                <Icon 
-                  name="heroicons:arrow-right" 
+                <UIcon 
+                  name="i-heroicons-arrow-right" 
                   class="w-5 h-5 transition-all duration-300 group-hover:translate-x-1"
                 />
               </span>
@@ -65,28 +65,28 @@
       </ScrollReveal>
     </div>
   </div>
-</template>
-
-<script setup lang="ts">
-import AnimatedButton from '~/components/ui/AnimatedButton.vue'
-import ScrollReveal from '~/components/ui/ScrollReveal.vue'
-
-const currentWord = ref('')
-let wordIndex = 0
-let charIndex = 0
-
-const words = [
+ </template>
+ 
+ <script setup lang="ts">
+ import AnimatedButton from '~/components/ui/AnimatedButton.vue'
+ import ScrollReveal from '~/components/ui/ScrollReveal.vue'
+ 
+ const currentWord = ref('')
+ let wordIndex = 0
+ let charIndex = 0
+ 
+ const words = [
   'passionné',
   'innovant',  
   'polyvalent',
   'méticuleux'
-]
-
-onMounted(() => {
+ ]
+ 
+ onMounted(() => {
   typeWord()
-})
-
-function typeWord() {
+ })
+ 
+ function typeWord() {
   const word = words[wordIndex]
   if (charIndex < word.length) {
     currentWord.value = word.slice(0, charIndex + 1)
@@ -95,9 +95,9 @@ function typeWord() {
   } else {
     setTimeout(eraseWord, 2000)
   }
-}
-
-function eraseWord() {
+ }
+ 
+ function eraseWord() {
   if (charIndex > 0) {
     currentWord.value = words[wordIndex].slice(0, charIndex - 1)
     charIndex--
@@ -106,21 +106,21 @@ function eraseWord() {
     wordIndex = (wordIndex + 1) % words.length
     setTimeout(typeWord, 500)
   }
-}
-</script>
-
-<style scoped>
-.typewriter {
+ }
+ </script>
+ 
+ <style scoped>
+ .typewriter {
   display: inline-block;
   min-width: 8ch;
   text-align: left;
   border-right: 2px solid currentColor;
   animation: blink 1s step-end infinite;
-}
-
-@keyframes blink {
+ }
+ 
+ @keyframes blink {
   50% {
     border-color: transparent;
   }
-}
-</style>
+ }
+ </style>
